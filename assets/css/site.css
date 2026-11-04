@@ -346,6 +346,9 @@ a.insight .state{color:inherit;font-weight:600}
   .rows li a{padding-block:24px}
 }
 
+/* placeholders: unmistakably unfinished, never styled as final copy */
+.todo{background:var(--yellow);color:var(--black);padding:.05em .35em;border-radius:4px;font-weight:500;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
 /* ---------- motion layer (added only when JS runs and motion is allowed) ---------- */
 .motion [data-reveal]{opacity:.001;transform:translateY(20px);transition:opacity 520ms var(--ease-out),transform 620ms var(--ease-out);transition-delay:var(--d,0ms)}
 .motion [data-reveal].is-in{opacity:1;transform:none}
