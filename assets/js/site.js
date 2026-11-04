@@ -22,6 +22,64 @@
     });
   }
 
+  /* section links glide to their section; links into the home page from other pages glide there after loading */
+  var hdr = document.querySelector('.hdr');
+  var gliding = 0;
+  function glideTo(el) {
+    var from = window.scrollY;
+    var to = Math.max(0, Math.min(
+      el.getBoundingClientRect().top + from - (hdr ? hdr.offsetHeight : 0) - 24,
+      document.documentElement.scrollHeight - window.innerHeight));
+    var dist = to - from;
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+    if (reduce || Math.abs(dist) < 2) { window.scrollTo(0, to); return; }
+    var dur = Math.min(1100, Math.max(550, Math.abs(dist) * 0.3));
+    var start = null, run = ++gliding;
+    var step = function (t) {
+      if (run !== gliding) return;
+      if (start === null) start = t;
+      var k = Math.min(1, (t - start) / dur);
+      var eased = k < 0.5 ? 8 * k * k * k * k : 1 - Math.pow(-2 * k + 2, 4) / 2;
+      window.scrollTo(0, from + dist * eased);
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  /* the visitor scrolling by hand takes over from a glide */
+  ['wheel', 'touchstart', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { gliding++; }, { passive: true });
+  });
+  var page = location.pathname.split('/').pop() || 'index.html';
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href*="#"]');
+    if (!a || a.classList.contains('skip') || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var url = new URL(a.href, location.href);
+    var id = decodeURIComponent(url.hash.slice(1));
+    if (!id || url.origin !== location.origin) return;
+    var targetPage = url.pathname.split('/').pop() || 'index.html';
+    if (targetPage === page) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      if (location.hash !== url.hash) history.pushState(null, '', url.hash);
+      glideTo(el);
+    } else if (!reduce) {
+      try { sessionStorage.setItem('nexus-glide', id); } catch (err) { return; }
+      e.preventDefault();
+      location.href = url.pathname + url.search;
+    }
+  });
+  var pending = null;
+  try { pending = sessionStorage.getItem('nexus-glide'); sessionStorage.removeItem('nexus-glide'); } catch (err) {}
+  if (pending && document.getElementById(pending)) {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    history.replaceState(null, '', '#' + pending);
+    window.scrollTo(0, 0);
+    var go = function () { setTimeout(function () { glideTo(document.getElementById(pending)); }, 150); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go); else go();
+  }
+
   /* live clocks for the corridor cities; the HTML carries a static fallback */
   var clocks = document.querySelectorAll('[data-clock]');
   var status = document.querySelectorAll('[data-overlap]');
