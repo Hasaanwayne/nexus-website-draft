@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights on UK and China Market Entry | NEXUS</title>
+<meta name="description" content="Guides, event notes and reports on entering the UK from China and Asia, scaling a UK tech company and doing business in China in 2027.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEXUS">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Insights on UK and China Market Entry | NEXUS">
+<meta property="og:description" content="Guides, event notes and reports on entering the UK from China and Asia, scaling a UK tech company and doing business in China in 2027.">
+<meta property="og:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEXUS. UK–China market entry. One accountable team in London.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insights on UK and China Market Entry | NEXUS">
+<meta name="twitter:description" content="Guides, event notes and reports on entering the UK from China and Asia, scaling a UK tech company and doing business in China in 2027.">
+<meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
+<meta name="twitter:image:alt" content="NEXUS. UK–China market entry. One accountable team in London.">
+<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* page-only: long H1s are sized to the column so they hold to two lines at every width (brand rule) */
+.hero .t-display.h1-fit{font-size:clamp(1.5rem,calc((100vw - 2 * var(--gutter)) * 3.8 / var(--h1-chars,40)),5.5rem);line-height:1;letter-spacing:-.025em}
+/* page-only: featured insight, topic filter, insight cards and the two sign-up blocks */
+.feature{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s-7);padding:var(--pad);background:var(--grey);color:var(--black)}
+.feature-copy{display:flex;flex-direction:column;gap:var(--s-4);align-items:flex-start}
+.feature-copy .t-h3{max-width:22em}
+.feature-copy p:not(.tag){max-width:40em}
+.meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2) var(--s-4)}
+.meta-row .fmt{font-size:var(--t-small);font-weight:600;color:var(--fg-2)}
+.author{display:grid;grid-template-columns:96px minmax(0,1fr);gap:var(--s-4);align-items:center}
+.author img{width:96px;height:96px;object-fit:cover;object-position:50% 20%;filter:grayscale(1)}
+.author-name{font-weight:600;line-height:1.35}
+.author-role{font-size:var(--t-small);color:var(--fg-2)}
+@media (min-width:900px){
+  .feature{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);align-items:end}
+  .feature-copy{grid-column:1 / span 8}
+  .feature-side{grid-column:9 / span 4}
+}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.filter{display:inline-flex;align-items:center;min-height:48px;padding:8px 22px;border-radius:var(--pill);border:2px solid var(--black);background:transparent;color:var(--black);font:600 var(--t-body)/1.2 var(--font-text);cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.filter[aria-pressed="true"]{background:var(--black);color:var(--yellow)}
+@media (hover:hover){.filter[aria-pressed="false"]:hover{background:var(--white)}}
+.insight-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gutter)}
+@media (min-width:760px){.insight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1260px){.insight-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:999px){.insight-grid .t-h4{font-size:1.25rem}}
+.insight-grid > li{display:flex}
+.insight-grid .card{width:100%;--pad:24px}
+@media (max-width:399px){.insight-grid .card{--pad:20px}}
+.card-img{margin:calc(-1 * var(--pad)) calc(-1 * var(--pad)) var(--s-2)}
+.card-img img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.subtitle{margin-top:calc(-1 * var(--s-2));font-weight:600;font-size:1.1875rem;line-height:1.35}
+.empty-note{margin-top:var(--s-5);font-weight:600}
+.hub{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gutter)}
+.hub-cards{display:grid;gap:var(--gutter)}
+@media (min-width:900px){.hub{grid-template-columns:repeat(12,minmax(0,1fr));align-items:start}.hub-cards{grid-column:1 / span 5}.hub-media{grid-column:6 / span 7}}
+@media (min-width:700px) and (max-width:899px){.hub-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.briefing-form{display:grid;gap:var(--s-5)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nexuscreativehq.com/#organization",
+      "name": "NEXUS",
+      "legalName": "NEXUS Creative HQ Ltd",
+      "url": "https://nexuscreativehq.com/",
+      "logo": "https://nexuscreativehq.com/assets/img/nexus-logo-white-1600.png",
+      "description": "NEXUS helps technology businesses land, grow and scale in the UK, with China as its flagship corridor.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "UK Companies House company number",
+        "value": "12667243"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "SBREC, 80 Basinghall Street",
+        "addressLocality": "London",
+        "postalCode": "EC2V 5AG",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://nexuscreativehq.com/contact",
+        "areaServed": [
+          "GB",
+          "CN",
+          "HK"
+        ],
+        "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://nexuscreativehq.com/insights#webpage",
+      "url": "https://nexuscreativehq.com/insights",
+      "name": "Insights on UK and China Market Entry | NEXUS",
+      "description": "Guides, event notes and reports on entering the UK from China and Asia, scaling a UK tech company and doing business in China in 2027.",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@id": "https://nexuscreativehq.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nexuscreativehq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://nexuscreativehq.com/insights"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="ann" data-announcement>
+  <div class="wrap">
+    <p>Global Innovator Awards, 16 November 2026, The Dorchester, London.</p>
+    <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>
+  </div>
+</div>
+
+<header class="hdr on-black">
+  <div class="wrap hdr-bar">
+    <a class="brand" href="index.html"><img src="assets/img/nexus-logo-white-300.png" width="300" height="69" alt="NEXUS"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="institutions.html">Institutions</a></li>
+        <li><a href="international-companies.html">International companies</a></li>
+        <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+        <li><a href="asia-corridor.html">Asia corridor</a></li>
+        <li><a href="insights.html" aria-current="page">Insights</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-r">
+      <a class="link hdr-partner" href="partner-with-nexus.html">Partner with NEXUS</a>
+      <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+  <nav id="menu" class="menu" aria-label="Menu">
+    <div class="wrap">
+      <ul>
+        <li><a href="institutions.html">Institutions</a></li>
+        <li><a href="international-companies.html">International companies</a></li>
+        <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+        <li><a href="asia-corridor.html">Asia corridor</a></li>
+        <li><a href="insights.html" aria-current="page">Insights</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="menu-partner"><a href="partner-with-nexus.html">Partner with NEXUS</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero on-black" aria-labelledby="hero-title">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Insights</li></ol></nav>
+    <p class="hero-eyebrow">NEXUS intelligence <span aria-hidden="true">·</span> UK and Asia</p>
+    <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:43">Insights on entering and growing in the UK.</h1>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="lede"><b>What we are seeing across the UK and Asia.</b></p>
+        <p class="muted">Practical intelligence from the companies we support, the markets we work in and the partners we work with. Written for founders, institutions and investors making decisions about the UK and Asia.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#report">Get the China 2027 report</a>
+          <a class="btn btn-secondary" href="#briefing">Subscribe to the Briefing</a>
+        </div>
+      </div>
+      <figure class="figure hero-media">
+        <img src="assets/photos/s-tron-speaker.jpg" width="960" height="640" fetchpriority="high" alt="A speaker holding a microphone talks on stage at S-Tron Shanghai.">
+        <figcaption>On stage at S-Tron Shanghai. <span class="todo" data-placeholder>[Caption to be confirmed]</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Featured insight (chosen in the CMS) -->
+<section class="section on-white" aria-labelledby="featured-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="featured-title" class="t-h2">Featured insight</h2>
+      <div><p class="lede">Chosen by our team each month.</p></div>
+    </div>
+    <article class="feature">
+      <div class="feature-copy">
+        <div class="meta-row"><p class="tag">Asia corridor</p><p class="fmt">Article</p></div>
+        <h3 class="t-h3">Hong Kong as a gateway<span class="sr-only">: a first step into Asia for UK founders</span></h3>
+          <p class="subtitle" aria-hidden="true">A first step into Asia for UK founders</p>
+        <p>Why Hong Kong is often the easier place to start, what support exists for overseas companies, and how it connects to opportunities in mainland China.</p>
+        <p><span class="todo" data-placeholder>[Article to be supplied]</span></p>
+        <a class="link-arrow" href="asia-corridor.html"><span>Explore the Asia corridor</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="feature-side">
+        <div class="author">
+          <img src="assets/team/mark-sarfo-kantanka.jpg" width="297" height="297" loading="lazy" alt="Portrait of Mark Sarfo-Kantanka">
+          <div>
+            <p class="author-name">Mark Sarfo-Kantanka</p>
+            <p class="author-role">CEO and Co-Founder</p>
+            <p class="author-role"><span class="todo" data-placeholder>[Reading time and date to confirm]</span></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Latest insights, with topic filters -->
+<section id="latest" class="section on-grey" aria-labelledby="latest-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="latest-title" class="t-h2">Latest insights</h2>
+      <div>
+        <p class="lede">Guides, articles, event notes and reports.</p>
+        <div class="filters" role="group" aria-label="Filter insights by topic" data-filter-bar hidden>
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" type="button" data-filter="asia-corridor" aria-pressed="false">Asia corridor</button>
+          <button class="filter" type="button" data-filter="market-entry" aria-pressed="false">Market entry</button>
+          <button class="filter" type="button" data-filter="funding-ip" aria-pressed="false">Funding and IP</button>
+          <button class="filter" type="button" data-filter="createch" aria-pressed="false">CreaTech</button>
+          <button class="filter" type="button" data-filter="events" aria-pressed="false">Events</button>
+        </div>
+      </div>
+    </div>
+    <p class="sr-only" role="status" data-filter-status></p>
+    <ul class="insight-grid">
+      <li data-topic="market-entry">
+        <article class="card">
+          <figure class="card-img"><img src="assets/photos/tianjin-signing.jpg" width="724" height="544" loading="lazy" alt="Two men sign an agreement at a table on stage, under a screen that reads Signing Ceremony, at the Tianjin Promotion Conference."></figure>
+          <div class="meta-row"><p class="tag">Market entry</p><p class="fmt">Guide</p></div>
+          <h3 class="t-h4">Entering the UK from China<span class="sr-only">: the 2027 guide</span></h3>
+          <p class="subtitle" aria-hidden="true">The 2027 guide</p>
+          <p><span class="todo" data-placeholder>[Article to be supplied]</span></p>
+        </article>
+      </li>
+      <li data-topic="asia-corridor">
+        <article class="card">
+          <div class="meta-row"><p class="tag">Asia corridor</p><p class="fmt">Report</p></div>
+          <h3 class="t-h4">Doing Business in China 2027</h3>
+          <p>Our annual guide for UK technology companies looking at China and Hong Kong: where the demand is, how to enter, and the partners who can help.</p>
+          <p><span class="todo" data-placeholder>[Report in development: content, title and publication date to be confirmed]</span></p>
+          <a class="link-arrow" href="#report"><span>Register interest in the report</span><span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+      </li>
+      <li data-topic="events">
+        <article class="card">
+          <figure class="card-img"><img src="assets/photos/s-tron-panel-2025.jpg" width="512" height="342" loading="lazy" alt="Panellists seated on stage with microphones at S-Tron Shanghai 2025."></figure>
+          <div class="meta-row"><p class="tag">Events</p><p class="fmt">Event notes</p></div>
+          <h3 class="t-h4">S-Tron Shanghai 2025</h3>
+          <p><span class="todo" data-placeholder>[Title and event notes to be supplied]</span></p>
+        </article>
+      </li>
+      <li data-topic="createch">
+        <article class="card">
+          <div class="meta-row"><p class="tag">CreaTech</p><p class="fmt">Article</p></div>
+          <h3 class="t-h4">The Next £10bn Opportunities in Creative-Tech<span class="sr-only">: Where We’re Seeing Signals</span></h3>
+          <p class="subtitle" aria-hidden="true">Where We’re Seeing Signals</p>
+          <p><span class="todo" data-placeholder>[Article to be supplied]</span></p>
+        </article>
+      </li>
+      <li data-topic="funding-ip">
+        <article class="card">
+          <div class="meta-row"><p class="tag">Funding and IP</p><p class="fmt">Article</p></div>
+          <h3 class="t-h4">IP as an Asset<span class="sr-only">: How Creative Founders Can Make Their Work Investable</span></h3>
+          <p class="subtitle" aria-hidden="true">How Creative Founders Can Make Their Work Investable</p>
+          <p><span class="todo" data-placeholder>[Article to be supplied]</span></p>
+        </article>
+      </li>
+      <li data-topic="market-entry">
+        <article class="card">
+          <div class="meta-row"><p class="tag">Market entry</p><p class="fmt">Article</p></div>
+          <h3 class="t-h4">Partnerships as Growth<span class="sr-only">: How to Secure Collabs That Move Revenue</span></h3>
+          <p class="subtitle" aria-hidden="true">How to Secure Collabs That Move Revenue</p>
+          <p><span class="todo" data-placeholder>[Article to be supplied]</span></p>
+        </article>
+      </li>
+    </ul>
+    <p class="empty-note" data-filter-empty hidden>No insights in this topic yet.</p>
+  </div>
+</section>
+
+<!-- Report: Doing Business in China 2027 (Phase 1 records interest) -->
+<section id="report" class="section on-white" aria-labelledby="report-title">
+  <div class="wrap">
+    <div class="card card--black">
+      <div class="enquiry">
+        <div class="enquiry-intro">
+          <p class="tag">Report</p>
+          <h2 id="report-title" class="t-h3">Doing Business in China 2027</h2>
+          <p>Our annual guide for UK technology companies looking at China and Hong Kong: where the demand is, how to enter, and the partners who can help.</p>
+          <p><span class="todo" data-placeholder>[Report in development: content, title and publication date to be confirmed]</span></p>
+          <div class="next">
+            <h3 class="t-h4">What happens next</h3>
+            <ol>
+              <li>We record your interest in the report.</li>
+              <li>We email you the report when it is published.</li>
+            </ol>
+          </div>
+        </div>
+        <form class="form-grid" data-form="report_download" data-report="Doing Business in China 2027" data-next="We will email you the report when it is published." aria-labelledby="report-form-title">
+          <p id="report-form-title" class="sr-only">Register interest in the Doing Business in China 2027 report</p>
+          <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+          <div class="form-grid form-grid--2">
+            <div class="field"><label for="rep-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="rep-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="rep-email">Work email <span class="req" aria-hidden="true">*</span></label><input id="rep-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field field--full"><label for="rep-org">Organisation</label><input id="rep-org" name="organisation" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="check"><input id="rep-consent" name="marketing_consent" type="checkbox" value="true"><label for="rep-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy notice</a></label></div>
+          <div class="hp" data-hp aria-hidden="true"><label for="rep-website">Leave this field empty</label><input id="rep-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="form_type" value="report_download">
+          <input type="hidden" name="page_url"><input type="hidden" name="cta"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="submitted_at">
+          <div><button class="btn btn-primary" type="submit">Send me the report</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The NEXUS Briefing: monthly email sign-up -->
+<section id="briefing" class="section on-black" aria-labelledby="briefing-title">
+  <div class="wrap">
+    <div class="enquiry">
+      <div class="enquiry-intro">
+        <h2 id="briefing-title" class="t-h2">The NEXUS Briefing</h2>
+        <p class="lede">One short email a month: new insights, upcoming sessions and opportunities across the UK and Asia.</p>
+        <p><span class="todo" data-placeholder>[Working name]</span></p>
+        <div class="next">
+          <h3 class="t-h4">What happens next</h3>
+          <ol>
+            <li>You receive The NEXUS Briefing once a month.</li>
+            <li>Unsubscribe at any time from any email.</li>
+          </ol>
+        </div>
+      </div>
+      <form class="briefing-form" data-form="newsletter" data-next="You will receive The NEXUS Briefing once a month. Unsubscribe at any time." aria-labelledby="briefing-form-title">
+        <p id="briefing-form-title" class="sr-only">Subscribe to The NEXUS Briefing</p>
+        <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+        <div class="field"><label for="nl-email">Work email <span class="req" aria-hidden="true">*</span></label><input id="nl-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="check"><input id="nl-consent" name="marketing_consent" type="checkbox" value="true" required><label for="nl-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy notice</a> <span class="req" aria-hidden="true">*</span></label></div>
+        <div class="hp" data-hp aria-hidden="true"><label for="nl-website">Leave this field empty</label><input id="nl-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="form_type" value="newsletter">
+        <input type="hidden" name="page_url"><input type="hidden" name="cta"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="submitted_at">
+        <div><button class="btn btn-primary" type="submit">Subscribe</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Startup Diaries and Events -->
+<section class="section on-grey" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="more-title" class="t-h2">Stories and sessions</h2>
+      <div><p class="lede">Founders in their own words, and the conversations behind our insights.</p></div>
+    </div>
+    <div class="hub">
+      <div class="hub-cards">
+        <article class="card">
+          <p class="tag">Founder stories</p>
+          <h3 class="t-h3">NEXUS Startup Diaries</h3>
+          <p>Founders we work with, in their own words.</p>
+          <a class="link-arrow" href="https://nexusstartupdiaries.com"><span>Visit NEXUS Startup Diaries</span><span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+        <article class="card card--black">
+          <p class="tag">In person</p>
+          <h3 class="t-h3">Hear it first at a NEXUS Session</h3>
+          <p>Many of our insights start as conversations in the room.</p>
+          <a class="link-arrow" href="events.html"><span>See upcoming events</span><span class="arrow" aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <figure class="figure hub-media">
+        <img src="assets/photos/nexus-dinner-speaker.jpg" width="1556" height="1037" loading="lazy" alt="A speaker with a glass of wine addresses guests seated at candlelit tables at a NEXUS dinner.">
+        <figcaption>A NEXUS dinner. <span class="todo" data-placeholder>[Caption to be confirmed]</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot on-black">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img src="assets/img/nexus-logo-white-300.png" width="300" height="69" loading="lazy" alt="NEXUS"></a>
+        <p class="foot-tagline">We build businesses.</p>
+        <p>Helping technology businesses land, grow and scale in the UK, with China as our flagship corridor.</p>
+        <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      </div>
+      <nav class="foot-cols" aria-label="Footer">
+        <div>
+          <h2 class="foot-h">Who we help</h2>
+          <ul>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="international-companies.html">International companies</a></li>
+            <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+            <li><a href="partner-with-nexus.html">Partner with NEXUS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Explore</h2>
+          <ul>
+            <li><a href="asia-corridor.html">Asia corridor</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html">About and team</a></li>
+            <li><a href="endorsing-role.html">Endorsing role</a></li>
+            <li><a href="insights.html" aria-current="page">Insights</a></li>
+            <li><a href="https://nexusstartupdiaries.com">NEXUS Startup Diaries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Contact</h2>
+          <ul>
+            <li><a href="contact.html">Talk to us</a></li>
+            <li><span><span class="todo" data-placeholder>[Email to confirm]</span></span></li>
+            <li><span>LinkedIn, Instagram, X, Facebook <span class="todo" data-placeholder>[links to confirm]</span></span></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© 2026 NEXUS Creative HQ Ltd · Company number 12667243 · Kings Parade, Lower Coombe Street, Croydon CR0 1AA</p>
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><button class="btn-link" type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script>
+/* Topic filter (brief §4.8). Without JavaScript the buttons stay hidden and every card shows. */
+(function () {
+  var bar = document.querySelector('[data-filter-bar]');
+  if (!bar) return;
+  var buttons = [].slice.call(bar.querySelectorAll('button[data-filter]'));
+  var cards = [].slice.call(document.querySelectorAll('.insight-grid > [data-topic]'));
+  var empty = document.querySelector('[data-filter-empty]');
+  var status = document.querySelector('[data-filter-status]');
+  bar.hidden = false;
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var topic = b.getAttribute('data-filter');
+      var shown = 0;
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cards.forEach(function (c) {
+        var show = topic === 'all' || c.getAttribute('data-topic') === topic;
+        c.hidden = !show;
+        if (show) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+      if (status) status.textContent = shown === 0 ? 'No insights in this topic yet.' : (shown + (shown === 1 ? ' insight' : ' insights') + (topic === 'all' ? '' : ' in ' + b.textContent) + '.');
+    });
+  });
+})();
+</script>
+</body>
+</html>
