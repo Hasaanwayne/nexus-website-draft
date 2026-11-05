@@ -90,7 +90,7 @@
 
 @font-face{font-family:'General Sans';src:url('../fonts/GeneralSans-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'General Sans';src:url('../fonts/GeneralSans-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'General Sans';src:url('../fonts/GeneralSans-Semibold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
+/* brand weights only: Light, Regular, Medium, Bold (600 resolves to Bold) */
 @font-face{font-family:'General Sans';src:url('../fonts/GeneralSans-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:'NEXUS Display';src:url('../fonts/Outfit-700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:'NEXUS Display';src:url('../fonts/Outfit-800.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
@@ -578,3 +578,6 @@ a.chip{transition:background-color .15s ease,color .15s ease}
 .case-x{position:absolute;top:var(--pad);right:var(--pad);width:34%;height:auto}
 .case-name{position:relative;font:800 clamp(1.75rem,1.2rem + 1.6vw,2.75rem)/1 var(--font-display);letter-spacing:-.02em;max-width:12ch}
 .case-note{position:relative;font-size:var(--t-small)}
+
+/* footer: the official NEXUS "We build businesses" lockup */
+.foot-brand .foot-lockup img{width:clamp(220px,14rem + 4vw,320px);height:auto}
