@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="assets/css/site.css">
 <style>
 /* page-only: long H1s are sized to the column so they hold to two lines at every width (brand rule) */
-.hero .t-display.h1-fit{font-size:clamp(1.5rem,calc((100vw - 2 * var(--gutter)) * 3.8 / var(--h1-chars,40)),5.5rem);line-height:1;letter-spacing:-.025em}
 /* page-only: the listing grid, with the first case study set across the full width */
 .case-sector{font-size:var(--t-small);font-weight:500;color:var(--fg-2)}
 .case-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gutter)}
@@ -204,10 +203,10 @@
 <section class="hero on-black" aria-labelledby="hero-title">
   <div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Results</li></ol></nav>
-    <p class="hero-eyebrow">Results <span aria-hidden="true">·</span> Member case studies</p>
-    <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:40">Founders who built in the UK with NEXUS.</h1>
     <div class="hero-grid">
       <div class="hero-copy">
+        <p class="hero-eyebrow">Results <span aria-hidden="true">·</span> Member case studies</p>
+        <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:40">Founders who built in the UK with NEXUS.</h1>
         <p class="lede"><b>From first customers to an international acquisition.</b></p>
         <p class="muted">Seven technology companies, from aerospace to EdTech, on what they set out to do in the UK, how NEXUS helped and what changed.</p>
         <p><span class="todo" data-placeholder>[Written consent to publish required for each case study]</span></p>
@@ -218,7 +217,6 @@
       </div>
       <figure class="figure hero-media">
         <img src="assets/photos/nexus-networking.jpg" width="1472" height="1068" fetchpriority="high" alt="Guests in conversation around a dinner table at a NEXUS event, with a NEXUS banner behind them.">
-        <figcaption>Guests at a NEXUS event. <span class="todo" data-placeholder>[Caption to be confirmed]</span></figcaption>
       </figure>
     </div>
   </div>

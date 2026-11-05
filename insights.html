@@ -25,7 +25,6 @@
 <link rel="stylesheet" href="assets/css/site.css">
 <style>
 /* page-only: long H1s are sized to the column so they hold to two lines at every width (brand rule) */
-.hero .t-display.h1-fit{font-size:clamp(1.5rem,calc((100vw - 2 * var(--gutter)) * 3.8 / var(--h1-chars,40)),5.5rem);line-height:1;letter-spacing:-.025em}
 /* page-only: featured insight, topic filter, insight cards and the two sign-up blocks */
 .feature{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s-7);padding:var(--pad);background:var(--grey);color:var(--black)}
 .feature-copy{display:flex;flex-direction:column;gap:var(--s-4);align-items:flex-start}
@@ -177,10 +176,10 @@
 <section class="hero on-black" aria-labelledby="hero-title">
   <div class="wrap">
     <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Insights</li></ol></nav>
-    <p class="hero-eyebrow">NEXUS intelligence</p>
-    <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:42">What we are seeing across the UK and Asia.</h1>
     <div class="hero-grid">
       <div class="hero-copy">
+        <p class="hero-eyebrow">NEXUS intelligence</p>
+        <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:42">What we are seeing across the UK and Asia.</h1>
         <p class="lede">Practical intelligence from the companies we support, the markets we work in and the partners we work with. Written for founders, institutions and investors making decisions about the UK and Asia.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="#report">Get the China 2027 report</a>
@@ -189,7 +188,6 @@
       </div>
       <figure class="figure hero-media">
         <img src="assets/photos/s-tron-speaker.jpg" width="960" height="640" fetchpriority="high" alt="A speaker holding a microphone talks on stage at S-Tron Shanghai.">
-        <figcaption>On stage at S-Tron Shanghai. <span class="todo" data-placeholder>[Caption to be confirmed]</span></figcaption>
       </figure>
     </div>
   </div>
@@ -390,7 +388,6 @@
       </div>
       <figure class="figure hub-media">
         <img src="assets/photos/nexus-dinner-speaker.jpg" width="1556" height="1037" loading="lazy" alt="A speaker with a glass of wine addresses guests seated at candlelit tables at a NEXUS dinner.">
-        <figcaption>A NEXUS dinner. <span class="todo" data-placeholder>[Caption to be confirmed]</span></figcaption>
       </figure>
     </div>
   </div>
