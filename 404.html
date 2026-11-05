@@ -4,18 +4,22 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="site-root" content="/nexus-website-draft/">
 <script>
-/* Served at a nested address (/about/endorsing-role, or a 404 at any depth): resolve this page's relative links from the
-   site root, and keep in-page links (the skip link) on this page. Does nothing at a root-level address or in a file preview. */
+/* Served below the site root (/about/endorsing-role, /results/{slug}, a 404 at any depth): resolve this page's
+   relative links from the site root, and keep in-page links on this page. Does nothing at the root or in a file preview. */
 (function () {
-  var p = location.pathname;
-  if (!/^https?:$/.test(location.protocol) || p.split('/').length < 3) return;
-  var b = document.createElement('base'); b.href = '/'; document.head.appendChild(b);
+  if (!/^https?:$/.test(location.protocol)) return;
+  var m = document.querySelector('meta[name="site-root"]'), root = (m && m.content) || '/', p = location.pathname;
+  if (p.indexOf(root) !== 0 || p.slice(root.length).indexOf('/') < 0) return;
+  var b = document.createElement('base'); b.href = root; document.head.appendChild(b);
   document.addEventListener('DOMContentLoaded', function () {
     Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) { a.setAttribute('href', p + a.getAttribute('href')); });
   });
 })();
 </script>
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <title>Page not found | NEXUS</title>
 <meta name="description" content="This page has moved or no longer exists. Find support for institutions, international companies, UK scale-ups and the Asia corridor.">
 <meta name="robots" content="noindex">
