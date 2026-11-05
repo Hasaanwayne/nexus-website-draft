@@ -173,6 +173,7 @@ strong,b{font-weight:600}
 /* ---------- type ---------- */
 .t-display,.t-h2,.t-h3,.statement{font-family:var(--font-display);text-wrap:balance}
 .t-display{font-size:var(--t-display);font-weight:800;line-height:.94;letter-spacing:-.03em}
+.t-display--long{font-size:clamp(2.5rem,1rem + 4.6vw,5.75rem);max-width:15ch}
 .t-h2{font-size:var(--t-h2);font-weight:800;line-height:1;letter-spacing:-.025em}
 .t-h3{font-size:var(--t-h3);font-weight:700;line-height:1.15;letter-spacing:-.01em}
 .t-h4{font-family:var(--font-display);font-size:var(--t-h4);font-weight:700;line-height:1.2;letter-spacing:-.005em;text-wrap:balance}
