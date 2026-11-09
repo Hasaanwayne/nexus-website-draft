@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="site-root" content="/nexus-website-draft/">
+<script>
+/* Served below the site root (/about/endorsing-role, /results/{slug}, a 404 at any depth): resolve this page's
+   relative links from the site root, and keep in-page links on this page. Does nothing at the root or in a file preview. */
+(function () {
+  if (!/^https?:$/.test(location.protocol)) return;
+  var m = document.querySelector('meta[name="site-root"]'), root = (m && m.content) || '/', p = location.pathname;
+  if (p.indexOf(root) !== 0 || p.slice(root.length).indexOf('/') < 0) return;
+  var b = document.createElement('base'); b.href = root; document.head.appendChild(b);
+  document.addEventListener('DOMContentLoaded', function () {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) { a.setAttribute('href', p + a.getAttribute('href')); });
+  });
+})();
+</script>
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<title>Smart Patent Case Study | NEXUS</title>
+<meta name="description" content="How NEXUS helped Smart Patent move from a legal services mindset to a live AI platform covering the full patent lifecycle.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NEXUS">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Smart Patent Case Study | NEXUS">
+<meta property="og:description" content="How NEXUS helped Smart Patent move from a legal services mindset to a live AI platform covering the full patent lifecycle.">
+<meta property="og:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Patent Case Study | NEXUS">
+<meta name="twitter:description" content="How NEXUS helped Smart Patent move from a legal services mindset to a live AI platform covering the full patent lifecycle.">
+<meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
+<meta name="twitter:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
+<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+/* page-only: long H1s are sized to the column so they hold to two lines at every width (brand rule) */
+/* page-only: case study facts, impact points, founder quote and further case studies */
+.case-meta{display:grid;gap:var(--s-3)}
+.case-meta > div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);column-gap:var(--s-4);align-items:baseline}
+.case-meta dt{font-size:var(--t-small);font-weight:500;color:var(--fg-2)}
+.case-meta dd{font-weight:600;line-height:1.45}
+.case-meta .link{overflow-wrap:anywhere}
+.story{margin-top:var(--s-2)}
+.story p{max-width:40em}
+.impact{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s-6) var(--gutter)}
+@media (min-width:900px){.impact{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.impact li{padding-top:var(--s-4);border-top:4px solid var(--accent);font:700 var(--t-h4)/1.3 var(--font-display);letter-spacing:-.005em;text-wrap:pretty}
+.case-voice .statement{font-size:clamp(1.25rem,1rem + .6vw,1.625rem);line-height:1.4;max-width:34em}
+.case-voice figcaption{font-size:var(--t-body)}
+.case-sector{font-size:var(--t-small);font-weight:500;color:var(--fg-2)}
+.route-next .btn-row{margin-top:var(--s-2)}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://nexuscreativehq.com/#organization",
+      "name": "NEXUS",
+      "legalName": "NEXUS Creative HQ Ltd",
+      "url": "https://nexuscreativehq.com/",
+      "logo": "https://nexuscreativehq.com/assets/img/nexus-logo-white-1600.png",
+      "description": "NEXUS helps technology businesses land, grow and scale in the UK, with China as its flagship corridor.",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "UK Companies House company number",
+        "value": "12667243"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://nexuscreativehq.com/contact",
+        "areaServed": [
+          "GB",
+          "CN",
+          "HK"
+        ],
+        "availableLanguage": "en"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://nexuscreativehq.com/results/smart-patent#article",
+      "headline": "World-class IP strategy, made accessible by AI.",
+      "description": "How NEXUS helped Smart Patent move from a legal services mindset to a live AI platform covering the full patent lifecycle.",
+      "about": {
+        "@type": "Organization",
+        "name": "Smart Patent",
+        "url": "https://www.smartpatent.co.uk"
+      },
+      "author": {
+        "@id": "https://nexuscreativehq.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://nexuscreativehq.com/#organization"
+      },
+      "mainEntityOfPage": "https://nexuscreativehq.com/results/smart-patent",
+      "image": "https://nexuscreativehq.com/assets/img/og-default.jpg",
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nexuscreativehq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Results",
+          "item": "https://nexuscreativehq.com/results"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Smart Patent",
+          "item": "https://nexuscreativehq.com/results/smart-patent"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body data-case-study="smart-patent" data-sector="Legal tech">
+<div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="ann" data-announcement>
+  <div class="wrap">
+    <p>Global Innovator Awards, 16 November 2026.</p>
+    <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>
+  </div>
+</div>
+
+<header class="hdr on-black">
+  <div class="wrap hdr-bar">
+    <a class="brand" href="index.html"><img src="assets/img/nexus-logo-white-300.png" width="300" height="69" alt="NEXUS"></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="institutions.html">Institutions</a></li>
+        <li><a href="international-companies.html">International companies</a></li>
+        <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+        <li><a href="asia-corridor.html">Asia corridor</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-r">
+      <a class="link hdr-partner" href="partner-with-nexus.html">Partner with NEXUS</a>
+      <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    </div>
+  </div>
+  <nav id="menu" class="menu" aria-label="Menu">
+    <div class="wrap">
+      <ul>
+        <li><a href="institutions.html">Institutions</a></li>
+        <li><a href="international-companies.html">International companies</a></li>
+        <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+        <li><a href="asia-corridor.html">Asia corridor</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="menu-partner"><a href="partner-with-nexus.html">Partner with NEXUS</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- Hero: breadcrumb, headline, sector and website -->
+<section class="hero on-black" aria-labelledby="hero-title">
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="results.html">Results</a></li><li aria-current="page">Smart Patent</li></ol></nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow"><b>Smart Patent</b> <span aria-hidden="true">·</span> Case study</p>
+        <h1 id="hero-title" class="t-display h1-fit" style="--h1-chars:47">World-class IP strategy, made accessible by AI.</h1>
+        <dl class="case-meta">
+          <div><dt>Company</dt><dd>Smart Patent <span class="todo" data-placeholder>[Brand name to confirm]</span></dd></div>
+          <div><dt>Sector</dt><dd>Legal tech</dd></div>
+          <div><dt>Website</dt><dd><a class="link" href="https://www.smartpatent.co.uk" rel="noopener">smartpatent.co.uk</a></dd></div>
+          <div><dt>Founder</dt><dd>Jack Zhu</dd></div>
+        </dl>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="international-companies.html#start">Request a diagnostic</a>
+          <a class="btn btn-secondary" href="results.html">All case studies</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="case-panel" role="img" aria-label="Smart Patent"><img class="case-x" src="assets/brand/GreenX.png" width="1080" height="1080" alt="" loading="lazy"><span class="case-name">Smart Patent</span><span class="case-note"><span class="todo" data-placeholder>[Founder or product photo to be supplied]</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About the company, the challenge, how NEXUS helped, the outcome -->
+<section class="section on-white" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="about-title" class="t-h2">About the company</h2>
+      <div><p class="lede">Smart Patent is an AI-powered platform that helps founders, universities and innovation-led companies assess patentability, improve drafting quality and make smarter IP strategy decisions.</p></div>
+    </div>
+    <div class="cols-3 story">
+      <div class="card card--plain">
+        <h3 class="t-h3">The challenge</h3>
+        <p>There was an urgent need to localise the product, sharpen positioning and build UK credibility and networks from a standing start.</p>
+      </div>
+      <div class="card card--plain">
+        <h3 class="t-h3">How NEXUS helped</h3>
+        <p>NEXUS helped Jack move from a legal services mindset to a scalable platform model, sharpening UK market positioning and the way the business is presented to partners and investors.</p>
+      </div>
+      <div class="card card--plain">
+        <h3 class="t-h3">The outcome</h3>
+        <p>Smart Patent is live, covering the full patent lifecycle, and has been selected as a finalist in a national AI venture programme run by one of the largest media groups in China, opening international visibility ahead of a UK and China raise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact at a glance and the founder quote -->
+<section class="section on-black" aria-labelledby="impact-title">
+  <div class="wrap">
+    <div class="sec-head sec-head--stack">
+      <h2 id="impact-title" class="t-h2">Impact at a glance</h2>
+    </div>
+    <ul class="impact">
+      <li>Live AI platform covering the full patent lifecycle.</li>
+      <li>Finalist in a national AI venture programme.</li>
+      <li>Preparing a UK and China fundraise.</li>
+    </ul>
+    <figure class="quote case-voice mt-group">
+      <blockquote class="statement"><p>“NEXUS gave me a supportive community, practical guidance and the perspective to develop Smart Patent from an idea into a clearer and more scalable business.”</p></blockquote>
+      <figcaption><b>Jack Zhu</b>Founder, Smart Patent</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- The matching audience page -->
+<section class="section on-grey route-next" aria-labelledby="next-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="next-title" class="t-h2">Entering the UK?</h2>
+      <div>
+        <p class="lede">Enter the UK with a team on the ground: a paid UK Launch Readiness Sprint, UK soft landing support, market intelligence and vetted specialist partners.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="international-companies.html#start">Request a diagnostic</a>
+        </div>
+        <a class="link-arrow" href="international-companies.html"><span>See UK market entry support</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- More case studies -->
+<section class="section on-white" aria-labelledby="more-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="more-title" class="t-h2">More case studies</h2>
+      <div>
+        <p class="lede">Founders who built in the UK with NEXUS.</p>
+        <a class="link-arrow" href="results.html"><span>All case studies</span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="cols-2">
+      <article class="case">
+        <p class="tag">International companies</p>
+        <h3 class="t-h3">Readii</h3>
+        <p class="case-sector">EdTech</p>
+        <p class="case-headline">Helping every child find their voice in the UK classroom</p>
+        <p class="case-outcome">A live, revenue-generating product within its first two years.</p>
+        <a class="link-arrow" href="results-readii.html"><span>Read the case study<span class="sr-only">: Readii</span></span><span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+      <article class="case">
+        <p class="tag">UK scale-ups</p>
+        <h3 class="t-h3">Sentian Aerospace</h3>
+        <p class="case-sector">Aerospace and deep tech</p>
+        <p class="case-headline">From a garage to an international acquisition</p>
+        <p class="case-outcome">Technology acquired by Volatus Aerospace, a publicly listed company, in under two years from UK incorporation.</p>
+        <a class="link-arrow" href="results-sentian-aerospace.html"><span>Read the case study<span class="sr-only">: Sentian Aerospace</span></span><span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot on-black">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand foot-lockup" href="index.html"><img src="assets/brand/nexus-we-build-white.png" width="1012" height="344" loading="lazy" alt="NEXUS. We build businesses."></a>
+        <p>Helping technology businesses land, grow and scale in the UK, with China as our flagship corridor.</p>
+        <a class="btn btn-primary" href="contact.html">Talk to us</a>
+      </div>
+      <nav class="foot-cols" aria-label="Footer">
+        <div>
+          <h2 class="foot-h">Who we help</h2>
+          <ul>
+            <li><a href="institutions.html">Institutions</a></li>
+            <li><a href="international-companies.html">International companies</a></li>
+            <li><a href="uk-scale-ups.html">UK scale-ups</a></li>
+            <li><a href="partner-with-nexus.html">Partner with NEXUS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Explore</h2>
+          <ul>
+            <li><a href="asia-corridor.html">Asia corridor</a></li>
+            <li><a href="results.html">Results</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="about.html">About and team</a></li>
+            <li><a href="endorsing-role.html">Endorsing role</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="https://nexusstartupdiaries.com">NEXUS Startup Diaries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Contact</h2>
+          <ul>
+            <li><a href="contact.html">Talk to us</a></li>
+            <li><a href="mailto:build@nexuscreativehq.com">build@nexuscreativehq.com</a></li>
+            <li><span>LinkedIn, Instagram, X, Facebook <span class="todo" data-placeholder>[links to confirm]</span></span></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="legal">
+      <p>© 2026 NEXUS Creative HQ Ltd · Company number 12667243 · Registered office: Kings Parade, Lower Coombe Street, Croydon CR0 1AA · Registered in England and Wales</p>
+      <ul>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+        <li><button class="btn-link" type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

@@ -581,3 +581,6 @@ a.chip{transition:background-color .15s ease,color .15s ease}
 
 /* footer: the official NEXUS "We build businesses" lockup */
 .foot-brand .foot-lockup img{width:clamp(220px,14rem + 4vw,320px);height:auto}
+
+/* Asia corridor: the Hong Kong gateway card runs under the examples, so more examples can be added */
+.cols-3 > .partners-why{grid-column:1 / -1}
