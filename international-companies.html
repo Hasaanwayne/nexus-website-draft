@@ -22,31 +22,9 @@
 <meta name="twitter:description" content="Enter the UK with a team on the ground: UK Launch Readiness Sprint, soft landing support, market intelligence and vetted specialist partners.">
 <meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
 <meta name="twitter:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
-<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NeutralFace-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
-<style>
-/* audience page layout (shared by the three audience pages) */
-.challenge-copy{display:flex;flex-direction:column;gap:var(--s-5)}
-.challenge-copy .statement{max-width:24em}
-.proof{display:grid;gap:var(--s-6)}
-.proof li{display:flex;flex-direction:column;gap:var(--s-2);padding-top:var(--s-4);border-top:4px solid var(--accent)}
-.fit{gap:var(--s-7)}
-.fit > div{display:flex;flex-direction:column;gap:var(--s-4);align-items:flex-start;width:100%;padding-top:var(--s-5);border-top:4px solid var(--accent)}
-.fit > .fit-not{border-top-color:var(--grey)}
-.challenge-fig{width:100%;margin-top:var(--s-3)}
-.offer-price{font-size:var(--t-h4)}
-@media (min-width:700px) and (max-width:999px){.cols-3 > :nth-child(3):last-child{grid-column:1 / -1}}
-.steps .t-h3{font-size:var(--t-h4)}
-.after-steps{margin-top:var(--s-8)}
-.reading{display:grid;gap:var(--s-2)}
-.reading .link-arrow{align-items:flex-start;padding-block:var(--s-2)}
-.reading .link-arrow .arrow{margin-top:.1em}
-.faq details[open] summary::after{content:'\2212'}
-.evidence-foot{margin-top:var(--s-8)}
-.cases-head{display:flex;flex-direction:column;gap:var(--s-3);align-items:flex-start;margin:var(--s-8) 0 var(--head-gap)}
-@media (min-width:1000px){.steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,10 +69,10 @@
     },
     {
       "@type": "Service",
-      "@id": "https://nexuscreativehq.com/international-companies#market-entry-diagnostic",
+      "@id": "https://nexuscreativehq.com/international-companies#sprint",
       "name": "UK Launch Readiness Sprint",
-      "serviceType": "UK UK Launch Readiness Sprint",
-      "description": "A focused session and a written UK entry plan: your UK opportunity, priorities and risks, the recommended route to market and set-up, the introductions and partners you will need, and a costed plan for the next stage. Fixed fee, credited against further work.",
+      "serviceType": "UK launch readiness review",
+      "description": "Before you spend on a UK launch, find out what will work, what won't, and what to fix first. Three levels: Readiness Scan, Readiness Sprint and Sprint Plus. Prices on request.",
       "provider": {
         "@id": "https://nexuscreativehq.com/#organization"
       },
@@ -106,7 +84,7 @@
         "@type": "Audience",
         "audienceType": "Technology companies entering the UK"
       },
-      "url": "https://nexuscreativehq.com/international-companies#market-entry-diagnostic"
+      "url": "https://nexuscreativehq.com/international-companies#sprint"
     },
     {
       "@type": "Service",
@@ -155,7 +133,7 @@
           "name": "Do I need a UK company to start selling?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on your business model and customers. The diagnostic covers this, and our legal and accountancy partners advise on the right structure."
+            "text": "It depends on your business model and customers. The Readiness Sprint covers this, and our legal and accountancy partners advise on the right structure."
           }
         },
         {
@@ -176,10 +154,10 @@
         },
         {
           "@type": "Question",
-          "name": "Why is the diagnostic paid?",
+          "name": "Why is the Readiness Sprint paid?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Because it produces a real plan you can act on. The fee is credited against further work if you continue with us."
+            "text": "Because it produces a real plan you can act on. If you continue to our UK Landing Programme, we credit the fee for your Readiness Sprint or Sprint Plus."
           }
         }
       ]
@@ -192,7 +170,7 @@
 <div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
 <a class="skip" href="#main">Skip to main content</a>
 
-<div class="ann" data-announcement>
+<div class="ann" data-announcement role="region" aria-label="Announcement">
   <div class="wrap">
     <p>Global Innovator Awards, 16 November 2026.</p>
     <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>
@@ -248,7 +226,7 @@
         <p class="lede"><b>We help you reach your first UK customers and partners sooner, with less risk.</b></p>
         <p class="muted">Market intelligence, the right introductions, soft landing support and vetted specialist partners, managed by one team.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="#start">Request a diagnostic</a>
+          <a class="btn btn-primary" href="#start">Book a Readiness Sprint</a>
           <a class="btn btn-secondary" href="#how">How it works</a>
         </div>
       </div>
@@ -279,29 +257,67 @@
 <!-- 3. UK Launch Readiness Sprint -->
 <section id="sprint" class="section on-black" aria-labelledby="sprint-title">
   <div class="wrap">
-    <div class="split">
-      <div class="split-copy">
-        <div class="sec-head sec-head--left">
-          <h2 id="sprint-title" class="t-h2">The judgement the UK Government trusts. Applied to your UK launch.</h2>
-          <div>
-            <p class="lede">Investment banking rigour, 1,400+ business plans and clients who've gone on to win customers, funding and exits.</p>
-            <a class="link-arrow" href="results.html"><span>See what that judgement delivers</span><span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
+    <div class="sec-head">
+      <p class="hero-eyebrow">UK Launch Readiness Sprint</p>
+      <h2 id="sprint-title" class="t-h2">The judgement the UK Government trusts. Applied to your UK launch.</h2>
+      <div>
+        <p class="lede">Investment banking rigour, and expert feedback on 1,400+ innovation business plans from around the world. Our clients have gone on to win customers, funding and exits.</p>
+        <p class="sprint-intro">Before you spend on a UK launch, find out what will work, what won't, and what to fix first. Choose the level that fits where you are.</p>
+        <a class="link-arrow" href="results.html"><span>See what that judgement delivers</span><span class="arrow" aria-hidden="true">→</span></a>
       </div>
-      <div class="split-media">
-        <article class="offer" id="sprint-offer">
-          <p class="tag">Start here</p>
-          <h3 class="t-h3">UK Launch Readiness Sprint</h3>
-          <p>A focused session and a written UK entry plan for your company. <span class="todo" data-placeholder>[Updated sprint copy to follow]</span></p>
-          <ul class="offer-list">
-            <li><span>Your UK opportunity, priorities and risks</span></li>
-            <li><span>Recommended route to market and set-up</span></li>
-            <li><span>The introductions and partners you will need</span></li>
-            <li><span>A costed plan for the next stage</span></li>
-          </ul>
-          <p class="offer-price">Fixed fee <span class="todo" data-placeholder>[Amount to be confirmed]</span><small>Credited against further work</small></p>
+    </div>
+    <div class="sprint-scope">
+      <h3 class="t-h4">What we look at</h3>
+      <ul class="sprint-look">
+        <li><span>Your product / service and why UK customers would buy it</span></li>
+        <li><span>UK demand, competitors and pricing</span></li>
+        <li><span>Your commercial model and route to market</span></li>
+        <li><span>Your team and what you'll need on the ground</span></li>
+        <li><span>Regulation, standards and intellectual property</span></li>
+        <li><span>Funding, runway and the UK funding routes open to you</span></li>
+      </ul>
+    </div>
+    <div class="cols-3 sprint-levels">
+      <article class="offer" id="readiness-scan">
+        <h3 class="t-h3">Readiness Scan</h3>
+        <p>A fast, independent read on your UK potential.</p>
+        <dl class="level-facts">
+          <div><dt>What's included</dt><dd>A review of your business plan, pitch deck and a short questionnaire, against what UK customers, partners and investors look for.</dd></div>
+          <div><dt>You get</dt><dd>A readiness score, clear red flags and quick wins, in a short written summary.</dd></div>
+          <div><dt>Timing</dt><dd>About 5 working days.</dd></div>
+          <div><dt>Best for</dt><dd>Companies early in their UK planning.</dd></div>
+        </dl>
+        <a class="btn btn-secondary" href="#start" data-prefill="di-level=Readiness Scan" data-cta="Book this level: Readiness Scan">Book this level<span class="sr-only">: Readiness Scan</span></a>
       </article>
+      <article class="offer offer--recommended" id="readiness-sprint">
+        <p class="tag">Recommended</p>
+        <h3 class="t-h3">Readiness Sprint</h3>
+        <p>An expert view on whether, and how, to launch in the UK.</p>
+        <dl class="level-facts">
+          <div><dt>What's included</dt><dd>Everything in the Scan, plus a detailed review by our team, a working session with your founders, and checks on UK demand, competitors, regulation, IP and funding routes.</dd></div>
+          <div><dt>You get</dt><dd>A readiness score, a prioritised list of gaps to close and a 90-day UK launch plan.</dd></div>
+          <div><dt>Timing</dt><dd>2 to 3 weeks.</dd></div>
+          <div><dt>Best for</dt><dd>Companies seriously considering the UK.</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="#start" data-prefill="di-level=Readiness Sprint" data-cta="Book this level: Readiness Sprint">Book this level<span class="sr-only">: Readiness Sprint</span></a>
+      </article>
+      <article class="offer" id="sprint-plus">
+        <h3 class="t-h3">Sprint Plus</h3>
+        <p>Test the UK market before you commit.</p>
+        <dl class="level-facts">
+          <div><dt>What's included</dt><dd>Everything in the Sprint, plus qualified introductions to potential UK customers and partners, feedback gathered from those conversations, and an optional UK visit arranged by our team.</dd></div>
+          <div><dt>You get</dt><dd>Real evidence of UK demand and a clear go or no-go recommendation.</dd></div>
+          <div><dt>Timing</dt><dd>Agreed with you, depending on the introductions needed.</dd></div>
+          <div><dt>Best for</dt><dd>Companies ready to commit budget to the UK.</dd></div>
+        </dl>
+        <a class="btn btn-secondary" href="#start" data-prefill="di-level=Sprint Plus" data-cta="Book this level: Sprint Plus">Book this level<span class="sr-only">: Sprint Plus</span></a>
+      </article>
+    </div>
+    <div class="sprint-foot">
+      <p>Prices on request. If you continue to our UK Landing Programme, we credit the fee for your Readiness Sprint or Sprint Plus.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#start">Book a Readiness Sprint</a>
+        <a class="link" href="contact.html">Not sure which level fits? Talk to us.</a>
       </div>
     </div>
   </div>
@@ -432,7 +448,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="how-title" class="t-h2">How it works</h2>
-      <div><p class="lede">Four steps, with one team accountable from the diagnostic onwards.</p></div>
+      <div><p class="lede">Four steps, with one team accountable from the Readiness Sprint onwards.</p></div>
     </div>
     <ol class="steps steps--row steps--4">
       <li><span class="step-n" aria-hidden="true">1</span><h3 class="t-h3">Diagnose</h3><p>A focused session and a written UK entry plan.</p></li>
@@ -441,7 +457,7 @@
       <li><span class="step-n" aria-hidden="true">4</span><h3 class="t-h3">Grow</h3><p>We track results and plan your next stage.</p></li>
     </ol>
     <div class="btn-row after-steps">
-      <a class="btn btn-primary" href="#start">Request a diagnostic</a>
+      <a class="btn btn-primary" href="#start">Book a Readiness Sprint</a>
     </div>
   </div>
 </section>
@@ -463,7 +479,7 @@
     <div class="faq">
       <details>
         <summary>Do I need a UK company to start selling?</summary>
-        <div class="faq-a"><p>It depends on your business model and customers. The diagnostic covers this, and our legal and accountancy partners advise on the right structure.</p></div>
+        <div class="faq-a"><p>It depends on your business model and customers. The Readiness Sprint covers this, and our legal and accountancy partners advise on the right structure.</p></div>
       </details>
       <details>
         <summary>Can you help with visas?</summary>
@@ -474,8 +490,8 @@
         <div class="faq-a"><p>No. China is our flagship corridor, and we work with technology companies from other markets that are serious about the UK.</p></div>
       </details>
       <details>
-        <summary>Why is the diagnostic paid?</summary>
-        <div class="faq-a"><p>Because it produces a real plan you can act on. The fee is credited against further work if you continue with us.</p></div>
+        <summary>Why is the Readiness Sprint paid?</summary>
+        <div class="faq-a"><p>Because it produces a real plan you can act on. If you continue to our UK Landing Programme, we credit the fee for your Readiness Sprint or Sprint Plus.</p></div>
       </details>
     </div>
   </div>
@@ -486,20 +502,30 @@
   <div class="wrap">
     <div class="enquiry">
       <div class="enquiry-intro">
-        <h2 id="start-title" class="t-h2">Request a diagnostic</h2>
+        <h2 id="start-title" class="t-h2">Book a Readiness Sprint</h2>
         <p class="lede">Tell us about your company and your UK plans. We will confirm fit before you pay.</p>
         <div class="next">
           <h3 class="t-h4">What happens next</h3>
           <ol>
-            <li><span>We review your details and confirm fit within two working days.</span></li>
+            <li><span>We reply within two working days to arrange a short call.</span></li>
             <li><span>You choose a session time and pay securely. <span class="todo" data-placeholder>[Booking and payment tool to be confirmed]</span></span></li>
             <li><span>Your written plan follows the session.</span></li>
           </ol>
         </div>
       </div>
-      <form class="form-grid" data-form="diagnostic_international" aria-labelledby="start-title">
+      <form class="form-grid" data-form="diagnostic_international" data-next="Thanks for your interest in the UK Launch Readiness Sprint. We'll reply within two working days to arrange a short call." aria-labelledby="start-title">
         <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
         <div class="form-grid form-grid--2">
+          <div class="field field--full">
+            <label for="di-level">Which level interests you? <span class="req" aria-hidden="true">*</span></label>
+            <select id="di-level" name="sprint_level" required>
+              <option value="">Choose one</option>
+              <option>Readiness Scan</option>
+              <option>Readiness Sprint</option>
+              <option>Sprint Plus</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
           <div class="field"><label for="di-org">Company <span class="req" aria-hidden="true">*</span></label><input id="di-org" name="organisation" type="text" autocomplete="organization" required></div>
           <div class="field"><label for="di-country">Headquarters country <span class="req" aria-hidden="true">*</span></label><input id="di-country" name="country" type="text" autocomplete="country-name" required></div>
           <div class="field">
@@ -537,11 +563,11 @@
           <div class="field"><label for="di-name">Your name <span class="req" aria-hidden="true">*</span></label><input id="di-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="di-email">Work email <span class="req" aria-hidden="true">*</span></label><input id="di-email" name="email" type="email" autocomplete="email" required></div>
         </div>
-        <div class="check"><input id="di-consent" name="marketing_consent" type="checkbox" value="true"><label for="di-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy notice</a></label></div>
+        <div class="check"><input id="di-consent" name="marketing_consent" type="checkbox" value="true"><label for="di-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy Policy</a></label></div>
         <div class="hp" data-hp aria-hidden="true"><label for="di-website">Leave this field empty</label><input id="di-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="form_type" value="diagnostic_international">
         <input type="hidden" name="page_url"><input type="hidden" name="cta"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="submitted_at">
-        <div><button class="btn btn-primary" type="submit">Request a diagnostic</button></div>
+        <div><button class="btn btn-primary" type="submit">Book a Readiness Sprint</button></div>
       </form>
     </div>
   </div>

@@ -4,14 +4,19 @@
    - London and Shanghai live clocks and the shared-working-hours status
    - placeholder review switch (?placeholders=off hides everything marked data-placeholder)
    - cookie consent (Accept all / Reject / Manage), stored in localStorage
-   - GA4, loaded only after analytics consent and only when GA_MEASUREMENT_ID is set
+   - Google Tag Manager (GTM_CONTAINER_ID) or GA4 on its own (GA_MEASUREMENT_ID), loaded only after analytics consent
    - dataLayer events from brief §11, pushed only after analytics consent
    - every form[data-form]: inline validation, honeypot, source fields, draft thank-you or JSON POST to data-endpoint */
 (function () {
   'use strict';
 
-  /* ---------- configuration: the one place to set the analytics ID ---------- */
-  var GA_MEASUREMENT_ID = ''; /* e.g. 'G-XXXXXXXXXX'. Empty = analytics never load. */
+  /* ---------- configuration: the one place to set the analytics IDs ---------- */
+  /* Set ONE of these. With Tag Manager, the GA4 tag lives inside the container, so leave GA_MEASUREMENT_ID empty
+     (setting both would count every visit twice). Both empty = nothing loads. */
+  var GTM_CONTAINER_ID = ''; /* NEXUS container. Loads only after a visitor accepts analytics cookies */
+  var GA_MEASUREMENT_ID = ''; /* e.g. 'G-XXXXXXXXXX', only if Tag Manager is not used */
+  /* Where every form posts (functions/api/enquiry.js on Cloudflare). Empty = draft mode: nothing is sent. */
+  var ENQUIRY_ENDPOINT = '';
   var CONSENT_KEY = 'nexus-consent';
   var CONSENT_VERSION = 1;
   var ATTRIB_KEY = 'nexus-attrib';
@@ -46,7 +51,7 @@
     doc.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menuBtn.getAttribute('aria-expanded') === 'true') { setMenu(false); menuBtn.focus(); }
     });
-    window.addEventListener('resize', function () { if (window.innerWidth >= 1100) setMenu(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1240) setMenu(false); });
   }
 
   /* ---------- section links glide to their section (instant under reduced motion) ---------- */
@@ -137,6 +142,9 @@
   function readConsent() {
     try {
       var v = JSON.parse(getItem('localStorage', CONSENT_KEY));
+      /* a choice is remembered for 12 months (Cookie Policy), then the banner asks again */
+      var age = v && v.at ? Date.now() - Date.parse(v.at) : 0;
+      if (age > 365 * 24 * 60 * 60 * 1000) { removeItem('localStorage', CONSENT_KEY); return null; }
       if (v && v.v === CONSENT_VERSION && typeof v.analytics === 'boolean') return v;
     } catch (e) {}
     return null;
@@ -145,12 +153,40 @@
   function analyticsAllowed() { return !!(consent && consent.analytics); }
 
   window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   var gaLoaded = false;
+  var gtmLoaded = false;
+  /* Tag Manager is only ever loaded after the visitor accepts analytics, so it starts with analytics granted
+     and advertising denied (Google consent mode v2). Nothing is requested from Google before that. */
+  function loadTagManager() {
+    if (!GTM_CONTAINER_ID || gtmLoaded || !analyticsAllowed()) return;
+    gtmLoaded = true;
+    window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    var s = doc.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(GTM_CONTAINER_ID);
+    doc.head.appendChild(s);
+  }
+  /* consent withdrawn: tell any loaded tags, and clear Google Analytics cookies */
+  function stopAnalytics() {
+    if (gtmLoaded || gaLoaded) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+    if (GA_MEASUREMENT_ID) window['ga-disable-' + GA_MEASUREMENT_ID] = true;
+    try {
+      var host = location.hostname.split('.');
+      var domains = ['', location.hostname, '.' + host.slice(-2).join('.')];
+      doc.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (!/^_ga(_|$)|^_gid$|^_gat/.test(name)) return;
+        domains.forEach(function (d) { doc.cookie = name + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : ''); });
+      });
+    } catch (e) {}
+  }
   function loadAnalytics() {
+    if (GTM_CONTAINER_ID) { loadTagManager(); return; }
     if (!GA_MEASUREMENT_ID || gaLoaded || !analyticsAllowed()) return;
     gaLoaded = true;
     window['ga-disable-' + GA_MEASUREMENT_ID] = false;
-    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
     window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true, transport_type: 'beacon' });
     var s = doc.createElement('script');
@@ -213,6 +249,20 @@
     track('cta_click', { button_text: lastCta, page: location.pathname, destination: cta.getAttribute('href') || '' });
   });
 
+  /* "Book this level" and similar buttons pre-fill the form they jump to:
+     data-prefill="field-id=Value" sets a select or text field, data-prefill="radio-or-checkbox-id" ticks it. */
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-prefill]');
+    if (!a) return;
+    var spec = a.getAttribute('data-prefill');
+    var eq = spec.indexOf('=');
+    var field = doc.getElementById(eq < 0 ? spec : spec.slice(0, eq));
+    if (!field) return;
+    if (field.type === 'radio' || field.type === 'checkbox') field.checked = true;
+    else field.value = spec.slice(eq + 1);
+    field.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+
   function applyConsent() {
     if (analyticsAllowed()) {
       rememberFirstTouch();
@@ -225,7 +275,7 @@
     } else {
       removeItem('sessionStorage', ATTRIB_KEY);
       removeItem('sessionStorage', CTA_KEY);
-      if (GA_MEASUREMENT_ID) window['ga-disable-' + GA_MEASUREMENT_ID] = true;
+      stopAnalytics();
     }
   }
   function saveConsent(analytics) {
@@ -244,10 +294,10 @@
     banner.hidden = true;
     banner.innerHTML =
       '<p class="cookie-title" id="cookie-title">Cookies on this site</p>' +
-      '<p>We use necessary cookies to make this site work. With your permission we would also use analytics cookies to see how the site is used. <a class="link" href="cookies.html">Cookie policy</a></p>' +
+      '<p>We use necessary cookies to make this site work. With your permission we would also use analytics cookies to see how the site is used. <a class="link" href="cookies.html">Cookie Policy</a></p>' +
       '<div class="cookie-manage" id="cookie-manage" hidden>' +
         '<div class="check"><input type="checkbox" id="cookie-essential" checked disabled><label for="cookie-essential"><b>Necessary</b>Remember your cookie choice. Always on.</label></div>' +
-        '<div class="check"><input type="checkbox" id="cookie-analytics"><label for="cookie-analytics"><b>Analytics</b>Google Analytics 4, to count visits and enquiries by source. Off unless you turn it on.</label></div>' +
+        '<div class="check"><input type="checkbox" id="cookie-analytics"><label for="cookie-analytics"><b>Analytics</b>Google Analytics 4, loaded through Google Tag Manager, to count visits and enquiries by source. Off unless you turn it on.</label></div>' +
       '</div>' +
       '<div class="btn-row">' +
         '<button type="button" class="btn btn-primary" data-consent="accept">Accept all</button>' +
@@ -535,7 +585,7 @@
       if (!validate(form)) return;
       fillSource(form);
       var data = collect(form);
-      var endpoint = form.getAttribute('data-endpoint');
+      var endpoint = form.getAttribute('data-endpoint') || ENQUIRY_ENDPOINT;
       if (!endpoint) { trackForm(form, data); showDone(form, 'draft'); return; }
       var btn = form.querySelector('[type="submit"]');
       if (btn) { btn.disabled = true; btn.setAttribute('aria-busy', 'true'); }

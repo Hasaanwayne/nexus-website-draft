@@ -22,31 +22,9 @@
 <meta name="twitter:description" content="A focused growth diagnostic, then partner-delivered projects in go-to-market, investment readiness, AI adoption and tax. One contact throughout.">
 <meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
 <meta name="twitter:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
-<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NeutralFace-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
-<style>
-/* audience page layout (shared by the three audience pages) */
-.challenge-copy{display:flex;flex-direction:column;gap:var(--s-5)}
-.challenge-copy .statement{max-width:24em}
-.proof{display:grid;gap:var(--s-6)}
-.proof li{display:flex;flex-direction:column;gap:var(--s-2);padding-top:var(--s-4);border-top:4px solid var(--accent)}
-.fit{gap:var(--s-7)}
-.fit > div{display:flex;flex-direction:column;gap:var(--s-4);align-items:flex-start;width:100%;padding-top:var(--s-5);border-top:4px solid var(--accent)}
-.fit > .fit-not{border-top-color:var(--grey)}
-.challenge-fig{width:100%;margin-top:var(--s-3)}
-.offer-price{font-size:var(--t-h4)}
-@media (min-width:700px) and (max-width:999px){.cols-3 > :nth-child(3):last-child{grid-column:1 / -1}}
-.steps .t-h3{font-size:var(--t-h4)}
-.after-steps{margin-top:var(--s-8)}
-.reading{display:grid;gap:var(--s-2)}
-.reading .link-arrow{align-items:flex-start;padding-block:var(--s-2)}
-.reading .link-arrow .arrow{margin-top:.1em}
-.faq details[open] summary::after{content:'\2212'}
-.evidence-foot{margin-top:var(--s-8)}
-.cases-head{display:flex;flex-direction:column;gap:var(--s-3);align-items:flex-start;margin:var(--s-8) 0 var(--head-gap)}
-@media (min-width:1000px){.steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -157,7 +135,7 @@
 <div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
 <a class="skip" href="#main">Skip to main content</a>
 
-<div class="ann" data-announcement>
+<div class="ann" data-announcement role="region" aria-label="Announcement">
   <div class="wrap">
     <p>Global Innovator Awards, 16 November 2026.</p>
     <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>
@@ -460,7 +438,7 @@
           <div class="field"><label for="ds-email">Work email <span class="req" aria-hidden="true">*</span></label><input id="ds-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field field--full"><label for="ds-msg">Anything else we should know?</label><textarea id="ds-msg" name="message" rows="5" maxlength="2000"></textarea></div>
         </div>
-        <div class="check"><input id="ds-consent" name="marketing_consent" type="checkbox" value="true"><label for="ds-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy notice</a></label></div>
+        <div class="check"><input id="ds-consent" name="marketing_consent" type="checkbox" value="true"><label for="ds-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy Policy</a></label></div>
         <div class="hp" data-hp aria-hidden="true"><label for="ds-website">Leave this field empty</label><input id="ds-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="form_type" value="diagnostic_scaleup">
         <input type="hidden" name="page_url"><input type="hidden" name="cta"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="submitted_at">

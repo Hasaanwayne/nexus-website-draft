@@ -22,28 +22,9 @@
 <meta name="twitter:description" content="How NEXUS has helped technology founders build in the UK, from first customers to an international acquisition.">
 <meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
 <meta name="twitter:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
-<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NeutralFace-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
-<style>
-/* page-only: long H1s are sized to the column so they hold to two lines at every width (brand rule) */
-/* page-only: the listing grid, with the first case study set across the full width */
-.case-sector{font-size:var(--t-small);font-weight:500;color:var(--fg-2)}
-.case-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--gutter)}
-@media (min-width:700px){.case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.case-grid > .case--feature{grid-column:1 / -1}}
-@media (min-width:1000px){
-  .case-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .case--feature{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gutter);row-gap:var(--s-4);align-content:start}
-  .case--feature > *{grid-column:1 / span 6}
-  .case--feature > .case-side{grid-column:8 / span 5;grid-row:1 / span 4;display:flex;flex-direction:column;gap:var(--s-4);align-self:stretch}
-}
-.case--feature .case-headline{font:700 var(--t-h3)/1.15 var(--font-display);letter-spacing:-.01em}
-.case-side{display:contents}
-@media (min-width:1000px){.case-side{display:flex}}
-.case-side .link-arrow{margin-top:auto}
-.route-cards .card{--pad:24px}
-@media (max-width:1199px){.route-cards .t-h4{font-size:1.25rem}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -156,7 +137,7 @@
 <div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
 <a class="skip" href="#main">Skip to main content</a>
 
-<div class="ann" data-announcement>
+<div class="ann" data-announcement role="region" aria-label="Announcement">
   <div class="wrap">
     <p>Global Innovator Awards, 16 November 2026.</p>
     <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>

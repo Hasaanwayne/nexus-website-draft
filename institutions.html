@@ -22,31 +22,9 @@
 <meta name="twitter:description" content="UK Representation and Landing Programmes for science parks, innovation zones, hubs and funds. Your operating partner in the UK.">
 <meta name="twitter:image" content="https://nexuscreativehq.com/assets/img/og-default.jpg">
 <meta name="twitter:image:alt" content="NEXUS. Land, grow and scale technology businesses in the UK.">
-<link rel="preload" href="assets/fonts/Outfit-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NeutralFace-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/GeneralSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css">
-<style>
-/* audience page layout (shared by the three audience pages) */
-.challenge-copy{display:flex;flex-direction:column;gap:var(--s-5)}
-.challenge-copy .statement{max-width:24em}
-.proof{display:grid;gap:var(--s-6)}
-.proof li{display:flex;flex-direction:column;gap:var(--s-2);padding-top:var(--s-4);border-top:4px solid var(--accent)}
-.fit{gap:var(--s-7)}
-.fit > div{display:flex;flex-direction:column;gap:var(--s-4);align-items:flex-start;width:100%;padding-top:var(--s-5);border-top:4px solid var(--accent)}
-.fit > .fit-not{border-top-color:var(--grey)}
-.challenge-fig{width:100%;margin-top:var(--s-3)}
-.offer-price{font-size:var(--t-h4)}
-@media (min-width:700px) and (max-width:999px){.cols-3 > :nth-child(3):last-child{grid-column:1 / -1}}
-.steps .t-h3{font-size:var(--t-h4)}
-.after-steps{margin-top:var(--s-8)}
-.reading{display:grid;gap:var(--s-2)}
-.reading .link-arrow{align-items:flex-start;padding-block:var(--s-2)}
-.reading .link-arrow .arrow{margin-top:.1em}
-.faq details[open] summary::after{content:'\2212'}
-.evidence-foot{margin-top:var(--s-8)}
-.cases-head{display:flex;flex-direction:column;gap:var(--s-3);align-items:flex-start;margin:var(--s-8) 0 var(--head-gap)}
-@media (min-width:1000px){.steps--4{grid-template-columns:repeat(4,minmax(0,1fr))}}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -94,6 +72,17 @@
       "url": "https://nexuscreativehq.com/institutions#uk-landing-programme"
     },
     {
+      "@type": "Service",
+      "@id": "https://nexuscreativehq.com/institutions#portfolio",
+      "name": "Portfolio Readiness Programme",
+      "serviceType": "UK readiness review for a portfolio of technology companies",
+      "description": "An independent UK view across your whole portfolio, so you back the companies most likely to succeed: a Readiness Scan for every company, an agreed shortlist, a Readiness Sprint or Sprint Plus for shortlisted companies, and a summary report across your cohort. Prices on request, tailored to the size of your cohort.",
+      "provider": { "@id": "https://nexuscreativehq.com/#organization" },
+      "areaServed": { "@type": "Country", "name": "United Kingdom" },
+      "audience": { "@type": "Audience", "audienceType": "Science parks, innovation zones, incubators and funds" },
+      "url": "https://nexuscreativehq.com/institutions#portfolio"
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://nexuscreativehq.com/institutions#faq",
       "mainEntity": [
@@ -108,7 +97,7 @@
 <div style="background:#D1D1D1;color:#000;font:500 15px/1.4 'General Sans',Arial,sans-serif;text-align:center;padding:8px 20px">Design draft for client review. Not the official NEXUS website.</div>
 <a class="skip" href="#main">Skip to main content</a>
 
-<div class="ann" data-announcement>
+<div class="ann" data-announcement role="region" aria-label="Announcement">
   <div class="wrap">
     <p>Global Innovator Awards, 16 November 2026.</p>
     <a class="link" href="https://globalinnovatorawards.com/tickets?utm_source=nexus&amp;utm_medium=website&amp;utm_campaign=gia2026&amp;utm_content=announcement-bar">Get tickets</a>
@@ -197,9 +186,9 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="provide-title" class="t-h2">What we provide</h2>
-      <div><p class="lede">Three ways to work with us, each scoped to your institution and priced on application.</p></div>
+      <div><p class="lede">Two ways to work with us, each scoped to your institution and priced on application.</p></div>
     </div>
-    <div class="cols-3">
+    <div class="cols-2">
       <article class="offer" id="uk-representation">
         <p class="tag">Annual</p>
         <h3 class="t-h3">UK Representation</h3>
@@ -226,12 +215,45 @@
         </ul>
         <p class="offer-price">Priced per cohort, on application<small><span class="todo" data-placeholder>[Typical duration to be confirmed]</span></small></p>
       </article>
-      <article class="offer" id="uk-launch-readiness-sprint">
-        <p class="tag">For portfolio companies</p>
-        <h3 class="t-h3">UK Launch Readiness Sprint</h3>
-        <p>A version of our UK Launch Readiness Sprint for the companies in your portfolio. <span class="todo" data-placeholder>[Copy to follow]</span></p>
-        <p class="offer-price">On application</p>
-      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. Portfolio Readiness Programme -->
+<section id="portfolio" class="section on-black" aria-labelledby="portfolio-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="hero-eyebrow">Portfolio Readiness Programme</p>
+      <h2 id="portfolio-title" class="t-h2">Know which of your companies are ready for the UK.</h2>
+      <div><p class="lede">Sending a company overseas is a big investment, for them and for you. We give you an independent UK view across your whole portfolio, so you back the companies most likely to succeed.</p></div>
+    </div>
+    <div class="portfolio-grid">
+      <div>
+        <h3 class="t-h4">Why institutions use it</h3>
+        <ul class="portfolio-why">
+          <li><b>Fewer failed landings.</b> An independent check before companies commit time and money to the UK.</li>
+          <li><b>One yardstick for your whole cohort.</b> Every company is measured against the same UK readiness framework.</li>
+          <li><b>Evidence for your stakeholders.</b> Clear reporting you can share with your board and funders.</li>
+          <li><b>A route to market for the companies that are ready.</b> Our UK landing support takes them from plan to trading.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="t-h4">How it works</h3>
+        <ol class="steps portfolio-steps">
+          <li><span class="step-n" aria-hidden="true">1</span><h4 class="t-h3">Scan</h4><p>Every company in your cohort receives a Readiness Scan and score.</p></li>
+          <li><span class="step-n" aria-hidden="true">2</span><h4 class="t-h3">Shortlist</h4><p>We agree with you which companies to take forward.</p></li>
+          <li><span class="step-n" aria-hidden="true">3</span><h4 class="t-h3">Sprint</h4><p>Shortlisted companies complete a Readiness Sprint or Sprint Plus.</p></li>
+          <li><span class="step-n" aria-hidden="true">4</span><h4 class="t-h3">Land</h4><p>The companies you select join our UK Landing Programme, with NEXUS as their team on the ground.</p></li>
+        </ol>
+        <p class="portfolio-receive"><b>You receive:</b> a summary report across your cohort, with scores, common gaps and recommendations, plus each company's own results.</p>
+      </div>
+    </div>
+    <div class="sprint-foot">
+      <p class="portfolio-cred">The judgement the UK Government trusts, with investment banking rigour and experience of 1,400+ business plans.</p>
+      <p>Prices on request, tailored to the size of your cohort.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#start" data-prefill="pc-int-portfolio" data-cta="Discuss a portfolio programme">Discuss a portfolio programme</a>
+      </div>
     </div>
   </div>
 </section>
@@ -407,12 +429,14 @@
             <div class="choices">
               <div class="check"><input id="pc-int-rep" name="interest" type="radio" value="UK Representation" required><label for="pc-int-rep">UK Representation</label></div>
               <div class="check"><input id="pc-int-land" name="interest" type="radio" value="UK Landing Programme"><label for="pc-int-land">UK Landing Programme</label></div>
+              <div class="check"><input id="pc-int-portfolio" name="interest" type="radio" value="Portfolio Readiness Programme"><label for="pc-int-portfolio">Portfolio Readiness Programme</label></div>
               <div class="check"><input id="pc-int-unsure" name="interest" type="radio" value="Not sure yet"><label for="pc-int-unsure">Not sure yet</label></div>
             </div>
           </fieldset>
+          <div class="field field--full"><label for="pc-cohort">How many companies are in your cohort?</label><input id="pc-cohort" name="cohort_size" type="number" min="1" step="1" inputmode="numeric"></div>
           <div class="field field--full"><label for="pc-msg">What would you like to achieve?</label><textarea id="pc-msg" name="message" rows="5" maxlength="2000"></textarea></div>
         </div>
-        <div class="check"><input id="pc-consent" name="marketing_consent" type="checkbox" value="true"><label for="pc-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy notice</a></label></div>
+        <div class="check"><input id="pc-consent" name="marketing_consent" type="checkbox" value="true"><label for="pc-consent">Send me The NEXUS Briefing (monthly). We use your details to reply to this request; ticking this box also adds you to the Briefing. <a class="link" href="privacy.html">Privacy Policy</a></label></div>
         <div class="hp" data-hp aria-hidden="true"><label for="pc-website">Leave this field empty</label><input id="pc-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <input type="hidden" name="form_type" value="partnership_call">
         <input type="hidden" name="page_url"><input type="hidden" name="cta"><input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="referrer"><input type="hidden" name="landing_page"><input type="hidden" name="submitted_at">
