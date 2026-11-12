@@ -872,3 +872,12 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
   .btn:hover,.btn:active,.card:hover,.case:hover,.route:hover{transform:none!important}
 }
+/* Asia corridor partner cards (Mark, 11.11.26): logo, tag, name, short line in bold, then the description */
+.partner-logo{display:flex;align-items:center;height:72px;margin-bottom:var(--s-2)}
+.partner-logo img{width:auto;height:auto;max-height:72px;max-width:min(220px,100%);object-fit:contain}
+.card > .partner-short{color:var(--fg);font-weight:600}
+.partners-more{margin-top:var(--s-6);text-align:center;color:var(--fg-2);font-weight:500}
+.partners-hk{margin-top:var(--s-6)}
+.deleg-note{margin:var(--s-3) 0 var(--s-8);font-size:var(--t-small);color:var(--fg-2)}
+/* blocks left empty once placeholders are hidden (live domain) */
+.hide-placeholders [data-ph-empty]{display:none!important}

@@ -32,10 +32,36 @@
   function setItem(kind, key, val) { try { var s = store(kind); if (s) s.setItem(key, val); } catch (e) {} }
   function removeItem(kind, key) { try { var s = store(kind); if (s) s.removeItem(key); } catch (e) {} }
 
-  /* ---------- placeholders: review switch ---------- */
+  /* ---------- placeholders ----------
+     On the live domain the yellow placeholders are hidden (the early script in <head> adds the class before paint).
+     Anywhere else they show, so reviewers can see what is missing. ?placeholders=off hides them, ?placeholders=on shows
+     them on the live domain. When hidden, any block left empty goes too, and so does a card, quote or question whose
+     heading or answer is now empty. */
   try {
-    if (new URLSearchParams(location.search).get('placeholders') === 'off') root.classList.add('hide-placeholders');
+    var phParam = new URLSearchParams(location.search).get('placeholders');
+    if (phParam === 'off') root.classList.add('hide-placeholders');
+    if (phParam === 'on') root.classList.remove('hide-placeholders');
   } catch (e) {}
+  function phEmpty(el) {
+    var c = el.cloneNode(true);
+    Array.prototype.forEach.call(c.querySelectorAll('[data-placeholder]'), function (x) { x.remove(); });
+    return !c.textContent.trim() && !c.querySelector('img,svg,input,select,textarea,button,a[href],video,iframe');
+  }
+  if (root.classList.contains('hide-placeholders')) {
+    Array.prototype.forEach.call(doc.querySelectorAll('[data-placeholder]'), function (ph) {
+      var el = ph.parentElement, last = null;
+      while (el && el !== doc.body && el.tagName !== 'MAIN' && phEmpty(el)) { last = el; el = el.parentElement; }
+      if (last) last.setAttribute('data-ph-empty', '');
+    });
+    var gone = function (el) { return !el || !!el.closest('[data-ph-empty]') || phEmpty(el); };
+    Array.prototype.forEach.call(doc.querySelectorAll('details'), function (d) {
+      var a = d.querySelector('.faq-a'); if (a && gone(a)) d.setAttribute('data-ph-empty', '');
+    });
+    Array.prototype.forEach.call(doc.querySelectorAll('article, figure.quote, li.stat, .event'), function (box) {
+      var head = box.querySelector('h2, h3, h4, blockquote, .stat-value');
+      if (head && gone(head)) box.setAttribute('data-ph-empty', '');
+    });
+  }
 
   /* ---------- mobile menu ---------- */
   var menuBtn = doc.querySelector('.menu-btn');
