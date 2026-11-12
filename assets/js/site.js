@@ -623,4 +623,55 @@
         });
     });
   });
+  /* ---------- motion: scroll reveals and counting figures (nothing moves under reduced motion) ---------- */
+  (function () {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var SEL = '.sec-head,.split-copy,.figure:not(.hero-media),.how-media,.card,.offer,.case,.route,.event,.stat,.steps li,.member,.team-more,.faq,.reading,.timeline li,.logos > li,.chips,.feature,.impact li,.proof li,.portfolio-why li,.fit > div,.enquiry > form,.enquiry-intro,.sprint-scope,.table-wrap,.examples > .card--plain,.facts > div,.meet-list > *,.clocks > div,.challenge-copy > *,.sprint-foot,.also,.routes + .stack,.portfolio-receive,.partners-more,.quote';
+    var vh = window.innerHeight || 800;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    Array.prototype.forEach.call(doc.querySelectorAll(SEL), function (el) {
+      if (el.closest('.hero, .cookie, .hdr, .foot, [hidden]')) return;
+      if (el.parentElement && el.parentElement.closest('.rv')) return;
+      var r = el.getBoundingClientRect();
+      if (!r.height || r.top < vh * 0.92) return; /* already on screen: leave it be, never hide what is visible */
+      var i = 0, sib = el.previousElementSibling;
+      while (sib && sib.classList.contains('rv') && i < 5) { i++; sib = sib.previousElementSibling; }
+      el.style.setProperty('--rv-i', i);
+      el.classList.add('rv');
+      io.observe(el);
+    });
+    /* a keyboard user tabbing into a block that has not appeared yet sees it straight away */
+    doc.addEventListener('focusin', function (e) {
+      var b = e.target && e.target.closest ? e.target.closest('.rv:not(.is-in)') : null;
+      if (b) b.classList.add('is-in');
+    });
+    /* key figures count up once, then show exactly the published value */
+    var NUM = /^(\d{1,3}(?:,\d{3})+|\d+)(\+?)$/;
+    var countIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        countIO.unobserve(en.target);
+        var el = en.target, final = el.textContent, m = final.trim().match(NUM);
+        if (!m) return;
+        var target = parseInt(m[1].replace(/,/g, ''), 10), comma = m[1].indexOf(',') > -1, t0 = null, dur = 1500;
+        var fmt = function (n) { var s = String(n); return comma ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : s; };
+        var step = function (t) {
+          if (t0 === null) t0 = t;
+          var k = Math.min(1, (t - t0) / dur), e = k === 1 ? 1 : 1 - Math.pow(2, -10 * k);
+          el.textContent = k === 1 ? final : fmt(Math.round(target * e)) + m[2];
+          if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(doc.querySelectorAll('.stat-value'), function (el) {
+      if (!el.children.length && NUM.test(el.textContent.trim())) countIO.observe(el);
+    });
+  })();
 })();
