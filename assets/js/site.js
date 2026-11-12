@@ -623,6 +623,31 @@
         });
     });
   });
+  /* ---------- Who we work with: a swipe row on phones, with position squares (CSS does the layout) ---------- */
+  Array.prototype.forEach.call(doc.querySelectorAll('#routes .cols-3'), function (row) {
+    var cards = row.children;
+    if (cards.length < 2) return;
+    row.classList.add('swipe');
+    var dots = doc.createElement('div');
+    dots.className = 'swipe-dots';
+    dots.setAttribute('aria-hidden', 'true'); /* screen readers hear all three cards anyway */
+    for (var i = 0; i < cards.length; i++) dots.appendChild(doc.createElement('span'));
+    row.parentNode.insertBefore(dots, row.nextSibling);
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var max = row.scrollWidth - row.clientWidth, n = cards.length, at = 0;
+      if (max > 4) {
+        var step = cards[1].offsetLeft - cards[0].offsetLeft;
+        at = row.scrollLeft >= max - 4 ? n - 1 : Math.round(row.scrollLeft / step);
+      }
+      Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('is-on', k === Math.min(at, n - 1)); });
+    };
+    row.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
+
   /* ---------- motion: scroll reveals and counting figures (nothing moves under reduced motion) ---------- */
   (function () {
     if (reduce || !('IntersectionObserver' in window)) return;

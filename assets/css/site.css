@@ -1137,3 +1137,16 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
 /* footer social links (12 Nov 2026): one line of four links, each a 40px tap target */
 .foot-cols li.foot-social{display:block;font-size:var(--t-small);line-height:40px}
 .foot-cols li.foot-social a{display:inline;min-height:0;padding-block:10px}
+
+/* Who we work with on phones (12 Nov 2026): the three route cards become a swipe row. Each card is 85% of the
+   screen so the next one peeks in; squares underneath mark the position. site.js adds .swipe, so without
+   the script the cards simply stack. Tablets and desktops keep the grid. */
+.swipe-dots{display:none}
+@media (max-width:699px){
+  .cols-3.swipe{display:flex;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gutter));padding:4px var(--gutter) 8px;scroll-padding-inline:var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .cols-3.swipe::-webkit-scrollbar{display:none}
+  .cols-3.swipe > *{flex:0 0 85%;scroll-snap-align:start;scroll-snap-stop:always}
+  .swipe-dots{display:flex;justify-content:center;gap:8px;margin-top:var(--s-4)}
+  .swipe-dots span{width:8px;height:8px;border-radius:1px;background:var(--grey);transition:width .3s var(--ease-out),background-color .3s ease}
+  .swipe-dots span.is-on{width:24px;background:var(--black)}
+}
