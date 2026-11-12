@@ -1120,3 +1120,16 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
 @keyframes nx-turn{from{rotate:0deg}to{rotate:360deg}}
 @keyframes nx-par{from{transform:scale(1.1) translate3d(0,-3.5%,0)}to{transform:scale(1.1) translate3d(0,3.5%,0)}}
 @media print{.rv{opacity:1!important;transform:none!important;clip-path:none!important}}
+
+/* Mobile menu, 12 Nov 2026: a three-line hamburger that turns into a cross when open. The word "Menu" stays
+   in the button for screen readers (font-size 0 hides it visually without removing it). */
+.menu-btn{position:relative;width:46px;height:46px;min-height:46px;padding:0;border:0;border-radius:var(--r);background:transparent;color:var(--white);font-size:0;line-height:0;gap:0}
+.menu-btn::before,.menu-btn::after{content:'';position:absolute;left:12px;width:22px;height:2px;border:0;border-radius:1px;background:currentColor;transition:transform .3s var(--ease-out),top .3s var(--ease-out),box-shadow .2s ease}
+.menu-btn::before{top:15px;box-shadow:0 7px 0 currentColor}
+.menu-btn::after{top:29px}
+.menu-btn[aria-expanded="true"]{background:transparent;color:var(--yellow)}
+.menu-btn[aria-expanded="true"]::before{top:22px;height:2px;border:0;box-shadow:none;transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"]::after{top:22px;transform:rotate(-45deg)}
+@media (hover:hover){.menu-btn:hover{background:rgba(255,255,255,.1)}}
+.menu-btn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+@media (max-width:399px){.hdr .menu-btn{padding:0}}
