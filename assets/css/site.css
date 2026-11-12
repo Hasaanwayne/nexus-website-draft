@@ -121,7 +121,8 @@ strong,b{font-weight:600}
 .lede{font-size:var(--t-lede);font-weight:500;line-height:1.5;max-width:36em}
 .t-small{font-size:var(--t-small);line-height:1.5}
 .measure{max-width:38em}
-@media (max-width:400px){.t-display,.t-h2,.t-h3,.t-h4{overflow-wrap:anywhere;hyphens:auto}}
+/* phones: headings wrap only between words, never mid-word with a hyphen (12 Nov 2026) */
+.t-display,.t-h2,.t-h3,.t-h4{hyphens:manual}
 
 /* ---------- focus ---------- */
 :focus-visible{outline:2px solid var(--focus,#000);outline-offset:3px}
@@ -1150,3 +1151,16 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
   .swipe-dots span{width:8px;height:8px;border-radius:1px;background:var(--grey);transition:width .3s var(--ease-out),background-color .3s ease}
   .swipe-dots span.is-on{width:24px;background:var(--black)}
 }
+
+/* Phone word-break pass (12 Nov 2026): nothing splits mid-word. Figures, clocks and short card headings
+   size themselves to their box; the footer email gets the full width; brand names stay on one line. */
+.nw{white-space:nowrap}
+.stat,.clocks > div,.team-more{container-type:inline-size}
+.stat-value{white-space:nowrap;font-size:min(clamp(2.25rem,1.5rem + 2.4vw,3.5rem),24cqi)}
+.stat-value--word{white-space:normal;font-size:min(1.375rem,clamp(1.125rem,1rem + .5vw,1.375rem),16.5cqi)}
+.clock-time{white-space:nowrap;font-size:min(clamp(2rem,1.3rem + 2.6vw,3.5rem),30cqi)}
+.card .clock-time{font-size:min(clamp(1.75rem,1.3rem + 1.2vw,2.375rem),30cqi)}
+.clock-city{font-size:min(var(--t-label),12cqi);letter-spacing:.06em}
+.team-more .t-h4{font-size:min(var(--t-h4),16.5cqi)}
+.table td:first-child{overflow-wrap:normal;white-space:nowrap}
+@media (max-width:699px){.foot-cols > div:last-child{grid-column:1 / -1}.foot-cols a[href^="mailto:"]{overflow-wrap:normal}}
