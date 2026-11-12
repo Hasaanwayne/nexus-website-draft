@@ -1016,12 +1016,22 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
   .enquiry:not(.card .enquiry) > .enquiry-intro:has(> .next):not(:has(> .figure)) > .next{margin-top:auto}
 }
 
-/* 6. Our mission: the statement runs the full width, the brand X turns slowly behind it */
-.mission .quote{max-width:none;padding-left:clamp(20px,2.5vw,40px)}
-.mission .statement{font-size:clamp(1.5rem,.95rem + 2.3vw,2.875rem);line-height:1.16;letter-spacing:-.01em;max-width:28em}
-#mission{position:relative;overflow:hidden}
-#mission::before{content:'';position:absolute;z-index:0;right:-6%;top:calc(50% - min(310px,29vw));width:min(620px,58vw);aspect-ratio:1080/1070;background:url('../brand/large X Outline.png') center / contain no-repeat;filter:invert(1);opacity:.07;pointer-events:none}
-#mission > .wrap{position:relative;z-index:1}
+/* 6. About: Our story and Our mission follow the site's text-beside-photo pattern. Text and photo share
+   top and bottom edges; the story photo carries a fine outline, the mission photo a yellow corner. */
+.story-split + .stats{margin-top:var(--s-8)}
+.story-copy > .lede{font-size:var(--t-statement);font-weight:600;line-height:1.3;max-width:22em;text-wrap:balance}
+.story-copy > p:not(.lede){color:var(--fg-2);max-width:38em}
+.mission .quote{padding-left:var(--s-5)}
+.mission .statement{font-size:clamp(1.375rem,1rem + 1.25vw,2.125rem);line-height:1.22;letter-spacing:-.005em}
+.framed{position:relative;isolation:isolate}
+.framed::after{content:'';position:absolute;z-index:-1;right:-14px;bottom:-14px;width:42%;height:50%;background:var(--yellow);border-radius:var(--r)}
+.framed--line::after{right:auto;bottom:auto;left:-14px;top:-14px;width:60%;height:60%;background:none;border:1px solid var(--line)}
+.story-split .figure img{object-position:38% 62%}
+.mission-split .figure img{object-position:50% 40%}
+@media (max-width:899px){.framed::after{right:-10px;bottom:-10px}.framed--line::after{left:-10px;top:-10px}.framed{margin:0 10px 10px 0}.framed--line{margin:10px 0 0 10px}}
+@media (min-width:900px){
+  .story-split > .split-media,.mission-split > .split-media{min-height:360px}
+}
 
 /* 7. Home hero: taller, a bigger headline, Land, grow and scale in yellow, and a framed photograph */
 .hero-lines .hl--accent{color:inherit}
@@ -1091,13 +1101,12 @@ a.chip{transition:background-color .16s ease,color .16s ease,border-color .16s e
   .hero-media::before{animation:nx-fade 1.2s ease .7s both}
   .hero::before{animation:nx-float 16s ease-in-out infinite alternate}
   .hero::after{animation:nx-drift 28s linear infinite}
-  #mission::before{animation:nx-turn 60s linear infinite}
   .faq details[open] > .faq-a{animation:nx-up .45s var(--ease-out) both}
 
   /* photographs drift a little against the scroll where the browser supports scroll timelines */
   @supports (animation-timeline:view()){
     @media (min-width:900px){
-      .split .figure > img,.how-media > img,.challenge-fig > img,.enquiry-intro > .figure > img{animation:nx-par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+      .split .figure > img,.split-media .figure > img,.how-media > img,.challenge-fig > img,.enquiry-intro > .figure > img{animation:nx-par linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
     }
   }
 }
